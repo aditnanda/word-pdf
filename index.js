@@ -101,6 +101,11 @@ app.post('/convert', async (req, res) => {
             status: false,
             message: 'api_key / url is null'
         }));
+    } else if (api_key != configs.api_key){
+        res.end(JSON.stringify({
+            status: false,
+            message: 'invalid api_key'
+        }));
     }else{
 
         // download data dulu
